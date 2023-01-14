@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="checkpoint.css">
+</head>
+<body>
+    <div class="content">
+        <!-- <div class="img"><img src= "img4.jpeg" alt=""></div>
+        <div class="text">
+            <p>ffwdsfs</p>
+            <h3>Gía: </h3>
+        </div> -->
+    </div>
+    <div class="addProduct">
+        <span>Thêm sản phẩm: </span><input type="text" id = "name"><br>
+        <p class= "notice" style="display: none;">NHẬP LẠI!</p>
+        <button onclick="addProduct()">Hiển thị sản phẩm</button>
+        
+    </div>
+    <script>
+        arrList = []
+        arrListProduct = [
+            {
+                name: "MIZUNO ALPHA PRO AS TF - WHITE/PURPLE/RED",
+                img : "img1.webp",
+                price: "3,390,000₫",
+                id: 1,
+            }, 
+            {
+                name: "NIKE PHANTOM GT 2 ELITE DF FG LUCENT - GLACIER ICE/BLACK/YELLOW STRIKE",
+                img : "img2.webp",
+                price: "4,950,000₫",
+                id: 2,
+            },
+            {
+                name: "NIKE TIEMPO REACT LEGEND 9 PRO TF GENERATION - SPACE PURPLE/WHITE",
+                img : "img3.webp",
+                price: "2,750,000₫",
+                id: 3,
+            }, 
+            {
+                name: "NIKE STREETGATO IC FEDERATIONS - WHITE/GAME ROYAL/UNIVERSITY RED",
+                img : "img4.jpeg",
+                price: "2,090,000₫",
+                id: 4,
+            },
+            {
+                name: "MIZUNO ALPHA PRO AS TF - WHITE/PURPLE/RED",
+                img : "img1.webp",
+                price: "3,390,000₫",
+                id: 5,
+            }, 
+
+        ]
+        let showProduct = (data) => {
+            let product_item = document.querySelector(".content")
+            if (product_item != []) {
+                if (arrListProduct != []) {
+                    for (let item of data) {
+                        product_item.innerHTML += `
+                        <div class="content">
+                            <div class="img"><img src= ${item.img} alt=""></div>
+                            <div class="text">
+                                <p>${item.name}</p>
+                                <h3>Gía: ${item.price}</h3>
+                            </div>
+                        </div>`
+                    }
+    
+                }
+                else product_item.innerHTML = `<p>Không thể hiển thị sản phẩm</p>`
+        }
+        
+    }
+    showProduct(arrListProduct)
+    // ----------------------------------------------------
+
+
+    newArrList = [
+        {
+            nameProduct: []
+        }
+    ]
+    let addProduct = (data) => {
+        let name_item = document.querySelector("#name").value
+        let v = name_item.length
+        if (v >= 5) {
+            document.querySelector(".notice").style.display = "none"
+            newArrList[0].nameProduct.push(name_item)
+            console.log(newArrList)
+        }
+        else {
+            document.querySelector(".notice").style.display = "block"
+            document.querySelector(".notice").style.color = "red"
+        }
+ 
+    }
+    addProduct(newArrList)
+    // ------------------------------------------------------
+    
+    
+    let detailProduct = () => {
+        let id = new URLSearchParams(window.location.search).get("id")
+
+    }
+    </script>
+</body>
+</html>

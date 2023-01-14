@@ -1,0 +1,29 @@
+.content img {
+    width: 300px;
+}
+.content p {
+    font-size: 20px;
+    font-weight: bold;
+}
+.content h3 {
+    font-size: 30px;
+    color: red;
+}
+.content {
+    width: 400px;
+}
+.content {
+    margin-bottom: 30px;
+}
+input {
+    width: 200px;
+    height: 40px;
+    font-size: 20px;
+}
+button {
+    width: 200px;
+    height: 30px;
+}
+span {
+    font-size: 20px;
+}
